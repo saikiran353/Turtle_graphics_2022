@@ -1,0 +1,250 @@
+from turtle import *
+
+def moveto(x,y):
+    pu()
+    goto(x,y)
+    pd()
+    setheading(0)
+
+def two(d):
+    point = pos()
+    fd(d)
+    rt(90)
+    fd(d)
+    lt(90)
+    for i in range(2):
+        bk(d)
+        lt(90)
+    bk(d)
+    pu()
+    goto(point)
+    pd()
+    setheading(0)
+
+
+def zero(d):
+    point = pos()
+    fd(d)
+    rt(90)
+    fd(d*2)
+    rt(90)
+    fd(d)
+    rt(90)
+    fd(d*2)
+    pu()
+    goto(point)
+    pd()
+    setheading(0)
+    
+	
+def letter_h(length):
+	pd()
+	lt(90)
+	fd(length*2)
+	rt(180)
+	pu()
+	fd(length)
+	lt(90)
+	pd()
+	fd(length)
+	lt(90)
+	fd(length)
+	rt(180)
+	fd(length*2)
+	pu()
+	lt(90)
+	fd(20)
+
+	
+def letter_a(length):
+	pd()
+	lt(90)
+	fd(length*2)
+	rt(90)
+	fd(length)
+	rt(90)
+	fd(length*2)
+	pu()
+	bk(length)
+	rt(90)
+	pd()
+	fd(length)
+	rt(180)
+	pu()
+	fd(length+20)
+	rt(90)
+	fd(length)
+	lt(90)
+	
+	
+def letter_p(length):
+	pd()
+	lt(90)
+	fd(length*2)
+	rt(90)
+	fd(length)
+	rt(90)
+	fd(length)
+	rt(90)
+	fd(length)
+	rt(180)
+	pu()
+	fd(length+20)
+	rt(90)
+	fd(length)
+	lt(90)
+	
+	
+def letter_y(length):
+	pu()
+	fd(length/2)
+	pd()
+	lt(90)
+	fd(length)
+	lt(30)
+	fd(length)
+	bk(length)
+	rt(60)
+	fd(length)
+	pu()
+	bk(length)
+	rt(60)
+	fd(length)
+	rt(90)
+	fd(length)
+	lt(90)
+	
+	
+def letter_n(length):
+	pd()
+	lt(90)
+	fd(length*2)
+	rt(90)
+	fd(length)
+	rt(90)
+	fd(length*2)
+	pu()
+	lt(90)
+	fd(20)
+	
+	
+def letter_e(length):
+	pd()
+	fd(length)
+	pu()
+	bk(length)
+	lt(90)
+	pd()
+	fd(length*2)
+	rt(90)
+	fd(length)
+	pu()
+	bk(length)
+	rt(90)
+	fd(length)
+	lt(90)
+	pd()
+	fd(length)
+	pu()
+	fd(20)
+	rt(90)
+	fd(length)
+	lt(90)
+
+	
+def letter_w(length):
+	pd()
+	lt(90)
+	fd(length*2)
+	pu()
+	bk(length*2)
+	rt(30)
+	pd()
+	fd(length)
+	rt(120)
+	fd(length)
+	lt(150)
+	fd(length*2)
+	pu()
+	rt(90)
+	fd(20)
+	rt(90)
+	fd(length*2)
+	lt(90)
+
+def letter_r(length):
+	pd()
+	lt(90)
+	fd(length*2)
+	rt(90)
+	fd(length)
+	rt(90)
+	fd(length)
+	rt(90)
+	fd(length)
+	lt(135)
+	fd(length+15)
+
+colors={'red':'#FF0000', 'green':'#008000', 'blue':'#0000FF', 'yellow':'#FFFF00'}
+
+def write_hny():
+
+	speed(20)	
+	pu()
+	goto(-500, 100)
+	pd()			
+	pensize(10)
+	pencolor(colors['red'])
+	letter_h(50)
+	letter_a(50)
+	letter_p(50)
+	letter_p(50)
+	letter_y(50)
+	
+	pu()
+	fd(60)
+	pencolor(colors['green'])
+	letter_n(50)
+	letter_e(50)
+	letter_w(50)
+	
+	pu()
+	fd(60)
+	pencolor(colors['blue'])
+	letter_y(50)
+	letter_e(50)
+	letter_a(50)
+	letter_r(50)
+
+
+
+def write_2020():
+	speed(20)
+	pensize(10)
+	moveto(0,0)  
+	pencolor(colors['red'])
+	two(50)
+	moveto(70, 0)
+	pencolor(colors['blue'])
+	zero(50)
+	moveto(140, 0)
+	pencolor(colors['yellow'])
+	two(50)
+	moveto(210, 0)
+	pencolor(colors['green'])
+	two(50)
+	moveto(30, 30)
+
+def www():
+	write_hny()
+	write_2020()
+	
+www()
+clist=['#FF0000', '#008000', '#0000FF', '#FFFF00', 'cyan']
+for i in range(100):
+	for j in clist:
+		Screen().bgcolor(j)
+mainloop()
+	
+	
+
